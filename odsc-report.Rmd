@@ -160,8 +160,6 @@ A code chunk opens with three backticks (` ```{r my-code-chunk-label} `) and clo
 The `reproducr` library displays all code by default (folded in the HTML output) while it does not display any code by default in the PDF output. If we would like to change this behavior, we can change the respective global `knitr` chunk option, for instance, by: `knitr::opts_chunk$set(echo = FALSE)`, which would hide all code -- even in the HTML output. 
 
 
-
-
 In the stage of explorative data analysis, we may want to dynamically explore our data and research output in interactive tables, graphs, or maps.
 
 ### Pandoc's DIV elements
@@ -380,6 +378,7 @@ reg_table %>%
 
 ```
 
+Table \@ref(tab:pulse-data-regression-table) shows that the active pulse rate of women, on average, tends to be `r round(models$M3 %>% broom::tidy(.) %>% filter(term=="Sex") %>% pull(estimate), digits=3)` beats per minute higher than the active pulse rate of men, net of other factors that could also influence the active pulse rate, like exercise, smoking habits, or body weight. 
 
 
 ## A longer blindtext section {#blindtext .not-in-format .html}
